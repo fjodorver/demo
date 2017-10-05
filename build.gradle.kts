@@ -21,7 +21,7 @@ plugins {
     val kotlinVersion = "1.1.51"
     kotlin(module = "jvm", version = kotlinVersion)
     kotlin(module = "plugin.spring", version = kotlinVersion)
-    kotlin(module = "plugin.noarg", version = kotlinVersion)
+    kotlin(module = "plugin.jpa", version = kotlinVersion)
     id("io.spring.dependency-management") version "1.0.3.RELEASE"
 }
 
