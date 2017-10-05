@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:db
+    platform: h2
+    driver-class-name: org.h2.Driver
+security:
+  oauth2:
+    client:
+      client-id: client_id
+      client-secret: secret
+      authorized-grant-types: password, refresh_token
+      scope: read, write
