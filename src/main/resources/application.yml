@@ -1,12 +1,21 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:db
-    platform: h2
-    driver-class-name: org.h2.Driver
+    url: jdbc:postgresql://localhost:5432/db
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: ***
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    serialization:
+      write_dates_as_timestamps: true
 security:
   oauth2:
     client:
       client-id: client_id
       client-secret: secret
-      authorized-grant-types: password, refresh_token
+      authorized-grant-types: client_credentials, refresh_token
       scope: read, write
+flyway:
+  locations: db/migration/
