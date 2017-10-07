@@ -6,6 +6,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.security.oauth2.provider.OAuth2Authentication
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -17,7 +18,7 @@ class AuthController(private val authService: AuthService) {
     }
 
     @GetMapping("/signin")
-    fun signOut(auth: OAuth2Authentication) {
+    fun signOut(@RequestBody auth: OAuth2Authentication) {
         authService.signOut(auth)
     }
 }
