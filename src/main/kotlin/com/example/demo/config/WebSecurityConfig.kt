@@ -21,6 +21,6 @@ class WebSecurityConfig: WebSecurityConfigurerAdapter() {
     fun tokenStore(@Qualifier("dataSource") dataSource: DataSource) = JdbcTokenStore(dataSource)
 
     override fun configure(http: HttpSecurity) {
-
+        http.csrf().disable()
     }
 }
