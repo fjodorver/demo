@@ -1,9 +1,9 @@
 import org.gradle.kotlin.dsl.*
 
 plugins {
-    `embedded-kotlin`
-    kotlin("plugin.spring")
-    kotlin("plugin.jpa")
+    embeddedKotlinVersion
+    kotlin("plugin.spring") version embeddedKotlinVersion
+    kotlin("plugin.jpa") version embeddedKotlinVersion
     id("io.spring.dependency-management") version "1.0.3.RELEASE"
     id("org.springframework.boot") version "1.5.7.RELEASE"
 }
@@ -13,8 +13,8 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
-    implementation(kotlin("reflect"))
+    implementation(kotlin("stdlib", embeddedKotlinVersion))
+    implementation(kotlin("reflect", embeddedKotlinVersion))
     implementation("org.flywaydb:flyway-core")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
