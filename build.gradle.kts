@@ -1,7 +1,7 @@
 import org.gradle.kotlin.dsl.*
 
 plugins {
-    embeddedKotlinVersion
+    `embedded-kotlin`
     kotlin("plugin.spring") version embeddedKotlinVersion
     kotlin("plugin.jpa") version embeddedKotlinVersion
     id("io.spring.dependency-management") version "1.0.3.RELEASE"
