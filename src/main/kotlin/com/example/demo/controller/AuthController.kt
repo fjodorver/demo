@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class AuthController(private val authService: AuthService) {
 
-    @PostMapping
+    @PostMapping("/signup")
     fun signUp(@AuthenticationPrincipal user: User){
         authService.signUp(user)
     }
 
-    @GetMapping
+    @GetMapping("/signin")
     fun signOut(auth: OAuth2Authentication) {
         authService.signOut(auth)
     }
