@@ -14,9 +14,7 @@ data class User(
         val password: String,
         val birthday: LocalDateTime,
         val isEnabled: Boolean = false
-) : Serializable {
-    val avatar = byteArrayOf()
-}
+) : Serializable
 
 fun User.toAuthUser(): UserDetails = AuthUser
         .withUsername(username)
