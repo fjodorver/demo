@@ -13,12 +13,13 @@ repositories {
 }
 
 dependencies {
+    implementation(kotlin("stdlib"))
+    implementation(kotlin("reflect"))
+    implementation("org.flywaydb:flyway-core")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.security.oauth:spring-security-oauth2")
-    implementation(kotlin("stdlib"))
-    implementation(kotlin("reflect"))
     runtime("org.springframework.boot:spring-boot-devtools")
     runtime("org.postgresql:postgresql")
 }
