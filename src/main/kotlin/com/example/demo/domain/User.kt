@@ -1,5 +1,6 @@
 package com.example.demo.domain
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.security.core.userdetails.UserDetails
 import java.io.Serializable
 import java.time.LocalDate
@@ -15,6 +16,7 @@ data class User(
         val email: String,
         val password: String,
         val birthday: LocalDate,
+        @JsonIgnore
         val isEnabled: Boolean = false,
         val avatar: ByteArray? = null
 ) : Serializable {

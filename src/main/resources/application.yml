@@ -10,6 +10,11 @@ spring:
   jackson:
     serialization:
       write_dates_as_timestamps: true
+  mail:
+    host: localhost
+    username: support@example.com
+    password: passowrd
+    port: 25
 security:
   oauth2:
     client:

@@ -3,13 +3,15 @@ package com.example.demo.controller
 import com.example.demo.domain.User
 import com.example.demo.service.AuthService
 import org.springframework.security.oauth2.provider.OAuth2Authentication
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 class AuthController(private val authService: AuthService) {
+
+    @GetMapping("/confirm")
+    fun confirm(@RequestParam token: String) {
+        authService.confirm(token)
+    }
 
     @PostMapping("/signup")
     fun signUp(@RequestBody user: User){

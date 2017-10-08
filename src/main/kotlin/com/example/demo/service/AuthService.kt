@@ -1,25 +1,13 @@
 package com.example.demo.service
 
 import com.example.demo.domain.User
-import com.example.demo.repository.UserRepository
 import org.springframework.security.oauth2.provider.OAuth2Authentication
-import org.springframework.security.oauth2.provider.token.ConsumerTokenServices
-import org.springframework.security.oauth2.provider.token.DefaultTokenServices
-import org.springframework.stereotype.Service
-import javax.transaction.Transactional
 
-@Service
-@Transactional
-class AuthService(tokenServices: ConsumerTokenServices, private val userRepository: UserRepository) {
+interface AuthService {
 
-    private val tokenServices = tokenServices as DefaultTokenServices
+    fun confirm(token: String)
 
-    fun signUp(user: User){
-        userRepository.save(user)
-    }
+    fun signUp(user: User)
 
-    fun signOut(auth: OAuth2Authentication): Boolean {
-        val accessToken = tokenServices.getAccessToken(auth).value
-        return tokenServices.revokeToken(accessToken)
-    }
+    fun signOut(auth: OAuth2Authentication)
 }
