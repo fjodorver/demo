@@ -18,7 +18,7 @@ class AuthController(private val authService: AuthService) {
         authService.signUp(user)
     }
 
-    @GetMapping("/signin")
+    @GetMapping("/signout")
     fun signOut(auth: OAuth2Authentication) {
         authService.signOut(auth)
     }
